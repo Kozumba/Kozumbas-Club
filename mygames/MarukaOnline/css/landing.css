@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Ysgarth';
+    src: url('Ysgarth-ZVWjq.ttf');
+}
+
+body{
+    background-color: black;
+    background-image: url("images/background.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.landing-scroll {
+    
+    width: 700px;
+    height: 925px;
+    margin: 5px auto;
+    background-image: url("images/scroll.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.infobox{ 
+    position: absolute;
+}
+.landing-title{
+    margin-top: 120px;
+    
+}
+.scroll-text, .landing-title{
+    width: 500px;
+    word-wrap: break-word;
+    margin-left: 85px;
+    font-family: 'Ysgarth', cursive;
+
+}
+.scroll-text{
+    font-size: 24px;
+}
+.options, .options a{
+    
+    color: black;
+    text-decoration: none;
+    list-style-type: none;
+    margin-left: -35px;
+    width: 700px;
+    margin-top: 300px;
+    font-family: 'Ysgarth', cursive;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+.options a:hover{
+    text-decoration:solid;
+}

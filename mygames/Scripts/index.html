@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TKPFK4BJTR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TKPFK4BJTR');
+</script>
+    <title></title>
+    <style>
+        #txt{
+            margin-left: 8px;
+        }
+        #battle{
+            display:none;
+        }
+         #weapon button{
+            height: 50px;
+            width: 50px;
+            background-size: cover;
+        }
+        #toxic_bp{
+            background: url("images/toxic_blowpipe.png");
+            
+        }
+        #scimitar{
+            background:url("images/scimitar.png");
+        }
+        #longsword{
+            background: url("images/longsword.png");
+        }
+        #warhammer{
+            background: url("images/warhammer.png");
+        }
+    </style>
+</head>
+<body>
+      
+    <div id="weapon">
+    <h2 id="txt">Select your weapon</h2>
+    <button id="toxic_bp" onclick="bp()"></button>
+    <button id="scimitar" onclick="scim()"></button>
+    <button id="longsword" onclick="long()"></button>
+    <button id="warhammer" onclick="war()"></button>
+    </div>
+   <div id="battle">     
+    <div>Your HP is: <span id="player_hp"></span></div>
+    <div>Enemy HP is: <span id="enemy_hp"></span></div>
+    <div>Damage dealt: <span id="dmg_dealt"></span></div>
+    <div>Damage recieved: <span id="dmg_recieved"></span></div>
+   </div>
+<script src="scripts/attack.js">
+</script>    
+</body>
+</html>

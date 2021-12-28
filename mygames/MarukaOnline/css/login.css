@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Ysgarth';
+    src: url('Ysgarth-ZVWjq.ttf');
+}
+body{
+    background-color: black;
+    background-image: url("images/background.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.loginbox{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    background-color: rgb(87, 87, 87);
+}
+input {
+}

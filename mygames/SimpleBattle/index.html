@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TKPFK4BJTR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TKPFK4BJTR');
+</script>
+  <meta charset="UTF-8">
+</head>
+<body id="bgb">
+<style>
+body{
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+.introdiv{
+text-align:center;
+margin: 0 auto;
+width:400px;
+border-radius:8px;
+border:1px solid black;
+padding:5px;
+background:yellow;
+}
+.buttonpads{
+width:100%;
+text-align:center;
+}
+.ready{
+text-align:center;
+display:none;
+}
+.health{
+height:20px;
+width:400px;
+background:green;
+display:none;
+text-align:center;
+}
+.health2{
+height:20px;
+width:400px;
+background:green;
+display:none;
+float:right;
+margin-top:561px;
+text-align:center;
+}
+.gamearea{
+width:800px;
+height:600px;
+border:1px solid black;
+display:none;
+margin:0 auto;
+}
+.enemy, .player{
+margin-top:-1px;
+}
+.p1{
+margin-left: 600px;
+margin-top:-30px;
+}
+.p2{
+margin-left:-800px;
+margin-top:-35px;
+
+}
+.attack-btn{
+margin-top:530px;
+}
+.texty, .texty2{
+text-align:center;
+font-size:60px;
+font-weight:bold;
+}
+.yes-no{
+display:none;
+text-align:center;
+}
+.prank{
+margin:0 auto;
+display:none;
+width:700px;
+height:700px;
+background:url("suprise.jpg");
+background-size:700px 700px;
+background-repeat:no-repeat;
+}
+.haha{
+text-align:center;
+font-size:30px;
+}
+</style>
+
+<div id="introdiv" class="introdiv">
+<h1> Hello mighty adventurer!</h1>
+<p> are you ready to take on battle against an evil doctor? If you win, you will become a champion! But if you lose, all i can say, you probably won't be happy with the outcome...
+If you still want to try your luck, then i wish you good luck adventurer! let luck be with you!
+Made by <b>Emīls Š</b> :)
+</p>
+<div id="buttonpads" class="buttonpads">
+<button id="starter" onclick="starter()">Start the battle!</button>
+<button onclick="exit()">No i won't, please take me away!</button>
+</div>
+
+</div>
+<audio id="audio" src="sound.mp3"></audio>
+<audio id="battlemusic" src="battle.mp3"></audio>
+<div class="ready" id="ready">
+<h1>Ready? Fight!</h1>
+</div>
+<div class="gamearea" id="gamearea">
+<div id="hp" class="health">
+<p id="enemy" class="enemy"></p>
+<p class="p1">enemy</p>
+</div>
+<button onclick="attack()" class="attack-btn">Attack!</button>
+<div id="hp2" class="health2">
+<p id="player" class="player"></p>
+<p class="p2">player</p>
+</div>
+</div>
+<div id="yes-no" class="yes-no">
+<p id="texty" class="texty"></p>
+<p id="texty2" class="texty2"></p>
+<button onclick="again()">Yes :)</button>
+<button onclick="exit()">No :(</button>
+</div>
+<div id="prank" class="prank">
+</div>
+<b><p id="haha" class="haha"></p></b>
+<script>
+var x = 100;
+var y = 100;
+function again(){
+location.href = "../SimpleBattle/"
+}
+function exit(){
+location.href = "https://www.google.com";
+}
+function battlestart(){
+document.getElementById("yes-no").style.display = "none";
+document.getElementById("introdiv").style.display="none";
+document.getElementById("buttonpads").style.display="none";
+document.getElementById("ready").style.display="block";
+var battlemusic = document.getElementById("battlemusic");
+        battlemusic.play();
+}
+function timedIntro(){
+
+document.getElementById("ready").style.display = "none";
+document.getElementById("hp").style.display = "block";
+document.getElementById("enemy").innerHTML = x + "/100";
+document.getElementById("gamearea").style.display = "block";
+document.getElementById("hp2").style.display = "block";
+document.getElementById("player").innerHTML = y + "/100";
+
+}
+function starter(){
+battlestart();
+	setTimeout(timedIntro,2000);
+}
+
+function attack(){
+var attackstr = Math.floor((Math.random() * 20)+1);
+x = x - attackstr;
+var attackstr2 = Math.floor((Math.random() * 20)+1);
+y = y - attackstr2;
+document.getElementById("enemy").innerHTML = x + "/100";
+document.getElementById("player").innerHTML = y + "/100";
+if (x <= 0){
+document.getElementById("hp").style.display = "none";
+document.getElementById("enemy").style.display = "none";
+document.getElementById("gamearea").style.display = "none";
+document.getElementById("hp2").style.display = "none";
+document.getElementById("player").style.display = "none";
+document.getElementById("texty").innerHTML = "You win!";
+document.getElementById("texty2").innerHTML = "do you want to play again?";
+document.getElementById("yes-no").style.display = "block";
+
+
+var battlemusic = document.getElementById("battlemusic");
+battlemusic.src="";
+}
+if (y <= 0){
+document.getElementById("hp").style.display = "none";
+document.getElementById("enemy").style.display = "none";
+document.getElementById("gamearea").style.display = "none";
+document.getElementById("hp2").style.display = "none";
+document.getElementById("player").style.display = "none";
+
+var battlemusic = document.getElementById("battlemusic");
+battlemusic.src="";
+var audio = document.getElementById("audio");
+        audio.play();
+document.getElementById("prank").style.display = "block";
+document.getElementById("haha").innerHTML = "HA HA HA!";
+}
+if (x <= 0 && y <= 0){
+document.getElementById("hp").style.display = "none";
+document.getElementById("enemy").style.display = "none";
+document.getElementById("gamearea").style.display = "none";
+document.getElementById("hp2").style.display = "none";
+document.getElementById("player").style.display = "none";
+document.getElementById("texty").innerHTML = "It's a draw!";
+document.getElementById("texty2").innerHTML = "do you want to play again?";
+
+document.getElementById("yes-no").style.display = "block";
+document.getElementById("haha").innerHTML = "";
+document.getElementById("prank").style.display = "none";
+var audio = document.getElementById("audio");
+        audio.src="";
+var battlemusic = document.getElementById("battlemusic");
+battlemusic.src="";
+}
+}
+</script>
+</body>
+</html>

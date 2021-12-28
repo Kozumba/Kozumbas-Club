@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Ysgarth';
+    src: url('../css/Ysgarth-ZVWjq.ttf');
+}
+body{
+    background-color: black;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+    width: 760px;
+    height: 823px;
+    background-color: burlywood;
+}
+.characterbox{
+margin-top: 15px;
+margin-left: 188px;
+}
+.descriptionbox{
+    margin: 0 auto;
+    margin-top: -150px;
+    background-image: url('../css/images/dialoguebox.png');
+    width: 512px;
+    height: 512px;
+    position: relative;
+}
+#class{
+    font-family: 'Ysgarth';
+    text-align: center;
+}
+.infobox{
+    width: 460px;
+    word-wrap: break-word;
+}
+#info{
+    margin-top: 180px;
+    margin-left: 35px;
+    font-family: 'Ysgarth';
+}
+.left, .right{
+    width: 64px;
+    height: 64px;
+}
+.game{
+    margin-left: 185px;
+    margin-bottom: 45px;
+    font-family: 'Ysgarth';
+}
+.buttona{
+    margin-left: 107px;
+}
+.atributes{
+}
+.stats{
+    list-style-type: none;
+    text-align: center;
+    margin-left: -45px;
+}
+.enemyscreen{
+height: 65%;
+width: 100%;
+background-image: url("../css/images/monsters/monster_bg/goblin/goblincave.jpg");
+background-position: center;
+
+}
+.monster{
+    margin-left: 250px;
+    margin-top: 100px;
+    position: relative;
+}
+.monster-name{
+    color:green;
+    margin-top: 100px;
+    margin-left: 300px;
+    position: absolute;
+    
+}
+.playerscreen{
+height: 35%;
+width: 100%;
+display: flex;
+}
+.player-container{
+    display: flex;
+    flex-direction: column;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+}
+.options ul{
+    padding: 3px;
+    background:white;
+    border: 1px black solid;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: -15px;
+    margin-left: 175px;
+    width: 200px;
+}
+.options ul:first-child{
+    margin-top: 18px;
+}
